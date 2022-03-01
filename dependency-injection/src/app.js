@@ -43,7 +43,28 @@ CardProcBank2()
     'use strict';
 
     angular.module('myApp', [])
-        .controller('myController', function ($scope) {  // AngularJS instantiates $scope and provides this to us via dependency injection
-            $scope.name = "Angular";
-        });
+        .controller('myController', Controller);
+
+        function Controller ($scope, $filter, $injector) {  // AngularJS instantiates $scope (service) and provides this to us via dependency injection
+            $scope.name = "Angular!!";
+            $scope.upper = function () {
+                let upCase = $filter('uppercase');
+                $scope.name = upCase($scope.name);
+            };
+            console.log($injector.annotate(Controller)); // ⭐️ this is key to how AngularJS works, ie. dependency injection in Javascript
+            // (3) ['$scope', '$filter', '$injector']
+            // 0: "$scope"
+            // 1: "$filter"
+            // 2: "$injector"
+            // length: 3
+            // [[Prototype]]: Array(0)
+        }
+
+    function annotateIsJustAFunction (name, job, blah) {
+        return "Hello World!";
+    }
+    console.log(annotateIsJustAFunction.toString());
+    // function annotateIsJustAFunction (name, job, blah) {
+    //     return "Hello World!";
+    // }
 })();
