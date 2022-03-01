@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="helloWorld">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
@@ -9,24 +9,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-  <div ng-controller="helloWorldController"> <!-- Angular provides the data binding to the angular module contoller in Javascript (Controller / ViewModel) -->
-    <h1>Hello {{name}}</h1> <!-- Angular's $scope.name data binding in the angular module contoller in Javascript (Controller / ViewModel) -->
+<body ng-app="nameCalculator">
+  <h3>🚫 Low Cohension + 🚫 Tight Coupling 👉 ✅ High Cohesion + ✅ Low Coupling</h3>
+  <div ng-controller="nameCalculatorController">
     <div>
-      <h3>{{name}} data binding:</h3>
-      <p>We can use the $scope from the ViewModel here in the View: {{name}}</p>
-      Input fields can update the data: <input type="text" ng-model="name" />
+      Your name: <input type="text" ng-model="name" ng-keyup="keyUp();">
     </div>
+    <div>Total numeric value: {{total}} for "{{name}}"</div>
   </div>
-  <br />
-  <hr />
-  <p>Angular is an alternative to ad-hoc web solutions (JS + HTML + CSS) since code complexity grows with each new feature.  This results in...</p>
-  <h3>🚫 Low Cohension and 🚫 Tight Coupling</h3>
-  <div id="nameCalculator">
-    <div>
-      Your name: <input type="text" id="name"> <!-- JS code is tightly coupled to this id="name" value -->
-    </div>
-  </div>
-  <div id="output"></div> <!-- JS code is tightly coupled to this id="output" value -->
 </body>
 </html>
