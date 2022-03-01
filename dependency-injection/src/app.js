@@ -43,7 +43,7 @@ CardProcBank2()
     'use strict';
 
     angular.module('myApp', [])
-        .controller('myController', Controller);
+        .controller('myController', ['$scope', '$filter', '$injector', Controller]); // the parameters are string literals and are not minified.  The last element in the array is the controller
 
         function Controller ($scope, $filter, $injector) {  // AngularJS instantiates $scope (service) and provides this to us via dependency injection
             $scope.name = "Angular!!";
@@ -68,3 +68,10 @@ CardProcBank2()
     //     return "Hello World!";
     // }
 })();
+
+// ✅ minified code work ok
+/*
+(function(){'use strict';angular.module('myApp',[]).controller('myController',['$scope','$filter','$injector',Controller]);function Controller($scope,$filter,$injector){$scope.name="Angular!!";$scope.upper=function(){let upCase=$filter('uppercase');$scope.name=upCase($scope.name)};console.log($injector.annotate(Controller))}
+function annotateIsJustAFunction(name,job,blah){return"Hello World!"}
+console.log(annotateIsJustAFunction.toString())})()
+*/
