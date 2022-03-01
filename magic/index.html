@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5 Custom Attributes</title>
+    </head>
+    <body>
+        <h1>HTML5 Custom Attributes</h1>
+        <div id="target" ng-app="myTestApp">
+            <section>
+                Section 1
+                <article>
+                    Article 1
+                </article>
+            </section>
+        </div>
+        <script>
+            var element = document.getElementById("target");
+            console.log(element);
+            console.log(element.getAttribute("ng-app"));
+            var found = document.querySelector("[ng-app]");
+            console.log(found);
+            console.log(found.getAttribute("ng-app"));
+        </script>
+    </body>
+</html>
