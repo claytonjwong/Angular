@@ -63,7 +63,6 @@ CardProcBank2()
 
 // ✅ minified code work ok
 /*
-(function(){'use strict';angular.module('myApp',[]).controller('myController',['$scope','$filter','$injector',Controller]);function Controller($scope,$filter,$injector){$scope.name="Angular!!";$scope.upper=function(){let upCase=$filter('uppercase');$scope.name=upCase($scope.name)};console.log($injector.annotate(Controller))}
-function annotateIsJustAFunction(name,job,blah){return"Hello World!"}
+(function(){'use strict';angular.module('myApp',[]).controller('myController',['$scope','$filter','$injector',function($scope,$filter,$injector){$scope.name="Angular!!";$scope.upper=function(){let upCase=$filter('uppercase');$scope.name=upCase($scope.name)}}]);function annotateIsJustAFunction(name,job,blah){return"Hello World!"}
 console.log(annotateIsJustAFunction.toString())})()
 */
