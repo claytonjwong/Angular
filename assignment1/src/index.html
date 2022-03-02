@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Assignment1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body ng-app="myApp">
+  <div ng-controller="myController">
+    Food: <input type="text" ng-model="food">
+    <button ng-click="checkIfTooMuch();">Check if too much</button>
+    <p>{{message}}</p>
+  </div>
+  <app-root></app-root>
+</body>
+</html>
